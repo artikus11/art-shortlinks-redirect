@@ -8,6 +8,14 @@ php:
 script:
 - echo 'Tested'
 before_deploy:
-      - git config --local user.name "artikus11"
-      - git config --local user.email "artikus.sol@gmail.ru"
-      - git tag "latest-1.5.0"
+- git config --local user.name "artikus11"
+- git config --local user.email "artikus.sol@gmail.ru"
+- git tag "latest-1.5.0"
+deploy:
+  provider: releases
+  api_key:
+    secure: YS2+X53v3cPuUQn52sHwitRntgIRanjFBiUrk4h6LCQg4DcXQj9Ekn9QpP7vVHeCw4tKNgDG4cZN3Bi17zpZlFYpphABkMv6TUVt0G61xqv92r+bSCol/EZV4PRPOIlRvtTeXu4mnA4Gi0yaoQU1yHg4FJR45vd20+OcLCfK+KF7Gsesq5tQqvwRvhyUMlap0KX7hCmU2vAUrGiYIa4pBHt6/FIY5EalB2azgHGukFzf9l7gZAQtsh3YUApVnAh8lQkYUbsauWuC03jAH67ocZtVV+aCoObDBv0MsZ9YO9YcbwAn4i9SJdEJrRqj0fa5I60JcSOZ4DYOGEk9vHWhHBQlUJfRaqvPk9GTxdB4g/wu+JPb04Cb0hr1a7NFvhdW6WBJURoPqQUhlHvzj+m9e7hy3d3JwL6oHOdC9cA/BY/uJG5exH+/Z73ZOtngHqNOjfslozzo/LTB0yWA3pzFTacOhVeq0/tIcBGrUYA8SiwDykXY4c5psTxejtrMScuT2QskP5RBTYdqWk8mH5S7m81WSAF6PR3SIF16ZdH9pC3KIZe+3XLPSr2bQKT3JUSwE2/cpdFj5545Yc0y2QB65ElNHvGNZ2h3TvurtSpbQUITy7ihy9eLdPLqTziu+55kKWXLawpTSpC4LfkmP0P4nAlBZF0qRAgx9hQVb+5doG4=
+  file: latest.zip
+  on:
+    repo: artikus11/art-shortlinks-redirect
+  after_deploy: "release created"
