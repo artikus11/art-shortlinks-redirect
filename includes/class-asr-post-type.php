@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Класс для создания типа поста и таксономии к нему
  *
  * @class       ASR_Shortlinks_Redirect
- * @version     1.5.0
+ * @since       1.5.0
  * @author      Artem Abramovich
  */
 class ASR_Post_Types {
@@ -61,7 +61,7 @@ class ASR_Post_Types {
 	/**
 	 * Регистрируем тип записи
 	 *
-	 * @version 1.0.0
+	 * @since 1.0.0
 	 */
 	public static function register_post_types() {
 
