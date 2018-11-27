@@ -38,16 +38,17 @@ class ASR_Post_Types {
 			apply_filters(
 				'asr_taxonomy_args_redirect_cat',
 				array(
-					'hierarchical' => true,
-					'label'        => 'Рубрики',
-					'labels'       => array(
+					'hierarchical'      => true,
+					'label'             => 'Рубрики',
+					'labels'            => array(
 						'name'          => 'Рубрики редиректов',
 						'singular_name' => 'Рубрика',
 						'menu_name'     => 'Рубрики редиректов',
 					),
-					'show_ui'      => true,
-					'query_var'    => true,
-					'rewrite'      => array(
+					'show_ui'           => true,
+					'show_admin_column' => true,
+					'query_var'         => true,
+					'rewrite'           => array(
 						'slug'         => 'rc',
 						'with_front'   => true,
 						'hierarchical' => true,
@@ -89,7 +90,7 @@ class ASR_Post_Types {
 					'menu_position'       => 27,
 					'menu_icon'           => 'dashicons-controls-repeat',
 					'hierarchical'        => false,
-					'supports'            => array( 'title' ),
+					'supports'            => array( 'title', 'thumbnail' ),
 					'taxonomies'          => array( 'asr_redirect_cat' ),
 					'has_archive'         => false,
 					'rewrite'             => array(

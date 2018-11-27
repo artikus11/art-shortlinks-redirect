@@ -5,7 +5,7 @@
  * Text Domain: art-shortlinks-redirect
  * Domain Path: /languages
  * Description: Плагин редиректов. Создает отдельные произвольные записи, с помощью которых можно через 301-й редирект перенаправлять пользователей на нужные страницы. Разработан специально для ютуб блогеров. С помощью плагина можно легко и непринужденно добавлять ссылки в аннотациях (сайт через который идет редирект должен быть привязан к каналу) и просто использовать, как собственную систему коротких ссылок.
- * Version: 1.5.1
+ * Version: 1.5.2
  * Author: Artem Abramovich
  * Author URI: https://wpruse.ru/
  * License: GPL-2.0+
@@ -109,6 +109,7 @@ class ASR_Shortlinks_Redirect {
 		require_once ASR_PLUGIN_DIR . 'includes/class-asr-post-type.php';
 		require_once ASR_PLUGIN_DIR . 'includes/class-asr-metabox.php';
 		require_once ASR_PLUGIN_DIR . 'includes/class-asr-admin.php';
+		require_once ASR_PLUGIN_DIR . 'includes/class-asr-admin-columns.php';
 
 	}
 
@@ -122,7 +123,6 @@ class ASR_Shortlinks_Redirect {
 
 		flush_rewrite_rules();
 	}
-
 
 	/**
 	 * Instance.
