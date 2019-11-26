@@ -74,7 +74,7 @@ class ASR_Admin {
 		if ( is_singular( 'asr_redirect' ) ) {
 
 			$redirect_url = get_post_meta( get_the_ID(), 'asr_redirect_links_one', true );
-			error_log( print_r( $redirect_url, 1 ) );
+
 			if ( $redirect_url ) {
 
 				wp_redirect( $redirect_url, 301 ); // phpcs:ignore WordPress.Security.SafeRedirect
