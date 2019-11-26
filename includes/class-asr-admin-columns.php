@@ -114,7 +114,7 @@ class ASR_Admin_Columns {
 							src="<?php echo esc_url( ASR_PLUGIN_URI ) . '/assets/images/clippy.svg'; ?>"
 							alt="Скопировать в буфер обмена">
 					</span>
-					<span class="asr-url-redirect-link" id="asr-url-redirect-link-<?php echo absint( $post_id ); ?>"><?php echo esc_url( get_permalink( $post_id ) ); ?></span>
+					<span class="asr-url-redirect-link" id="asr-url-redirect-link-<?php echo absint( $post_id ); ?>"><?php echo esc_url_raw( get_permalink( $post_id ) ); ?></span>
 				</div>
 				<div class="short-url-redirect">
 					<span

@@ -50,7 +50,7 @@ class ASR_Metabox {
 
 		$value = get_post_meta( $post->ID, 'asr_redirect_links_one', true );
 		wp_nonce_field( basename( __FILE__ ), 'redirect_links_nonce' );
-		echo '<label><input style="width: 100%;" type="text" name="redirectlinks" value="' . esc_url( $value ) . '" /></label> ';
+		echo '<label><input style="width: 100%;" type="text" name="redirectlinks" value="' . esc_url_raw( $value ) . '" /></label> ';
 
 	}
 
@@ -81,7 +81,7 @@ class ASR_Metabox {
 		$post = get_post( $post_id );
 
 		if ( 'asr_redirect' === $post->post_type ) {
-			update_post_meta( $post_id, 'asr_redirect_links_one', esc_attr( $_POST['redirectlinks'] ) );
+			update_post_meta( $post_id, 'asr_redirect_links_one', esc_url_raw( $_POST['redirectlinks'] ) );
 		}
 
 		return $post_id;
