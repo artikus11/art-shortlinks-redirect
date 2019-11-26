@@ -58,8 +58,8 @@ class ASR_Admin {
 			wp_die( 'Пора обновить страницу. Нонса устарела' );
 		}
 
-		update_post_meta( $post_id, 'asr_redirect_links_one', esc_url( $_POST['redirect_val'] ) );
-		update_post_meta( $_POST['redirect_id'], 'asr_redirect_links_one', esc_url( $_POST['redirect_val'] ) );
+		update_post_meta( $post_id, 'asr_redirect_links_one', esc_url_raw( $_POST['redirect_val'] ) );
+		update_post_meta( $_POST['redirect_id'], 'asr_redirect_links_one', esc_url_raw( $_POST['redirect_val'] ) );
 
 		wp_die();
 	}
@@ -74,10 +74,11 @@ class ASR_Admin {
 		if ( is_singular( 'asr_redirect' ) ) {
 
 			$redirect_url = get_post_meta( get_the_ID(), 'asr_redirect_links_one', true );
-
+			error_log( print_r( $redirect_url, 1 ) );
 			if ( $redirect_url ) {
 
-				wp_redirect( esc_url( $redirect_url ), 301 ); // phpcs:ignore WordPress.Security.SafeRedirect
+				wp_redirect( $redirect_url, 301 ); // phpcs:ignore WordPress.Security.SafeRedirect
+
 				$count = (int) get_post_meta( get_the_ID(), 'redirect_count', true );
 
 				update_post_meta( get_the_ID(), 'redirect_count', $count + 1 );
